@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    background-image: url(../images/blue.jpg);
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.logo-container {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    text-align: center; 
+    margin-right: 40%;
+}
+
+/* Style the role change container */
+.role-change-container {
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 30px;
+    width: 30%;
+    margin-left: 80%;
+    position: fixed;
+}
+
+/* Style the form title */
+.role-change-container h2 {
+    font-size: 25px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style the input fields and labels */
+.role-change-container .input-field {
+    margin-bottom: 20px;
+}
+
+.role-change-container b {
+    font-size: 15px;
+    color: #333;
+    display: block;
+}
+
+.role-change-container input,
+.role-change-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Style the submit button */
+.role-change-container button {
+    background-color: #4070f4;
+    color: #fff;
+    font-size: 17px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.role-change-container button:hover {
+    background-color: #265df2;
+}

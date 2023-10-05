@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>Create Shipment</title>
+    <link rel="stylesheet" href="../static/css/dashboard.css" />
+    <link rel="stylesheet" href="../static/css/createship.css" />
+    <script src="../static/js/dashboard.js"></script>
+</head>
+
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+        <div class="logo-container">
+            <span>Create Shipment</span>
+        </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <div class="nav_list">
+                    <a href="/dashboard" class="nav_link">
+                        <i class='bx bx-grid-alt nav_icon'></i>
+                        <span class="nav_name">Dashboard</span>
+                    </a>
+                    <a href="/myaccount" class="nav_link">
+                        <i class='bx bx-user nav_icon'></i>
+                        <span class="nav_name">My Account</span>
+                    </a>
+                    <a href="/myshipment" class="nav_link">
+                        <i class='bx bxs-book-content'></i>
+                        <span class="nav_name">My Shipment</span>
+                    </a>
+                    <a href="/createshipment" class="active">
+                        <i class='bx bxs-truck'></i>
+                        <span class="nav_name">New Shipment</span>
+                    </a>
+                    <a href="/viewallshipments" class="nav_link">
+                        <i class='bx bx-package'></i>
+                        <span class="nav_name">View Shipments</span>
+                    </a>
+                    <a href="/devicedata" class="nav_link">
+                        <i class='bx bx-hdd'></i>
+                        <span class="nav_name">Device Data</span>
+                    </a>
+
+                </div>
+            </div>
+            <a href="/logout" class="nav_link">
+                <i class='bx bx-log-out nav_icon'></i>
+                <span class="nav_name">SignOut</span>
+            </a>
+        </nav>
+    </div>
+    <div class="container">
+        <form action="/createshipment" autocomplete="off" method="post" id="shipment-form">
+            <div class="ship-details">
+                <div class="input-box">
+                    <span class="details">Shipment Number*</span>
+                    <input type="text" name="shipment_no" placeholder="Enter Shipment Number" required>
+                    <!-- Error message for shipment number -->
+                    <div id="shipment-number-error" class="error-message">{{ shipment_number_error }}</div>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Container Number*</span>
+                    <input type="text" name="container_no" placeholder="Enter Container Number" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="route_details" class="details">Route Details*</label>
+                    <select name="route_details" id="route_details" required>
+                        <option value="" disabled selected>Select Route</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Tirupathi">Tirupathi</option>
+                        <option value="New Delhi">New Delhi</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Kochin">Kochin</option>
+                        <option value="Kolkata">Kolkata</option>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <label for="goods_type" class="details">Goods Type*</label>
+                    <select name="goods_type" id="goods_type" required>
+                        <option value="" disabled selected>Select Goods</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Medicals">Medicals</option>
+                        <option value="Electricals">Electricals</option>
+                        <option value="Cosmetics">Cosmetics</option>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <label for="device" class="details">Device*</label>
+                    <select name="device" id="device" required>
+                        <option value="" disabled selected>Select Route</option>
+                        <option value="11560533076">11560533076</option>
+                        <option value="11560533077">11560533077</option>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Expected Delivery Date*</span>
+                    <input type="date" name="expected_delivery" id="deliverydate" name="Expected Delivery Date"
+                        required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">PO Number*</span>
+                    <input type="text" name="po_no" placeholder="Enter PO Number" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Delivery Number*</span>
+                    <input type="text" name="delivery_no" placeholder="Delivery Number" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">NDC Number*</span>
+                    <input type="text" name="ndc_no" placeholder="Enter NDC Number" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Batch id*</span>
+                    <input type="text" name="batch_id" placeholder="Enter Batch id" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Serial Number of Goods*</span>
+                    <input type="text" name="serial_no" placeholder="Enter Serial Number of Goods" required>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Shipment Description*</span>
+                    <input type="text" name="shipment_des" placeholder="Enter Shipment Description" required>
+                </div>
+
+                <!-- Display error message if it exists -->
+                {% if error_message %}
+                <div id="error-message" class="error-message">
+                    <p>{{ error_message }}</p>
+                </div>
+                {% endif %}
+
+                <div class="button1">
+                    <input type="submit" value="Create Shipment" class="create-shipment-button">
+                </div>
+
+                <div class="button2">
+                    <input type="reset" value="Clear Details" class="clear-button">
+                </div>
+<!-- 
+                <button type="submit" class="button">Create Shipment</button>
+                <button type="reset" class="button">Clear</button>
+                -->
+                </div>
+            
+            </div>
+        <script src="../static/js/createship.js"></script>
+</body>
+</form>
+
+</html>

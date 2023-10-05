@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    padding: 10px;
+    background-image: url(../images/man.png);
+}
+
+.logo-container {
+    font-size: 24px; /* Reduced font size */
+    font-weight: bold;
+    color: #279668;
+    text-align: center;
+    margin-right: 45%;
+}
+
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+    max-height: 50vh; /* Adjust the max height as needed */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px; /* Reduced font size */
+    border-spacing: 0; /* Removed cell spacing */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 6px; /* Reduced padding */
+    text-align: left;
+}
+
+th {
+    background: #3498db;
+    color: white;
+}
+
+td {
+    background: #ecf0f1;
+}
+
+th:nth-child(even) {
+    background: #2980b9;
+}
+
+th:nth-child(odd) {
+    background: #df2323;
+}
+
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 12px; /* Further reduced font size for smaller screens */
+    }
+}
+
+/* Make the table cells responsive when the sidebar is expanded */
+@media (min-width: 992px) {
+    .l-navbar.active + .container .table-container {
+        max-width: calc(100% - 260px);
+    }
+}

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+
+/* Reset some default styles and set the font family */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Apply styles to the body element */
+body {
+    background-image: url(../images/acc.jpg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Style the logo container */
+.logo-container {
+    font-size: 30px;
+    font-weight: bold;
+    color: #af630c;
+    text-align: center;
+    margin-right: 45%;
+}
+
+/* Style the card container */
+.card {
+    margin-top: 100px;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 30px;
+    width: 30%;
+    margin-left: 30%;
+    position: fixed;
+}
+
+/* Style the card title */
+.card-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style the subheading */
+h4 {
+    font-size: 18px;
+    color: #376c8a;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Style the update buttons */
+.update-button1 {
+    flex: 1;
+    margin-right: 10px; /* Add some spacing between buttons */
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.update-button2 {
+    flex: 1;
+    margin-right: 10px; /* Add some spacing between buttons */
+    background: linear-gradient(135deg, #ff5733, #ff3300);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.update-button3 {
+    flex: 1;
+    margin-right: 10px; /* Add some spacing between buttons */
+    background: linear-gradient(135deg, #3097f8, #656fcc);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="../static/css/signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="form-login">
+                <img src="../static/images/SCMlogo.png" alt="Logo" class="logo">
+                <span class="title">Enter your new password</span>
+                <form action="/resetpassword" autocomplete="off" method="post" required>
+                    <input type="hidden" name="token" value="{{ token }}">
+                    
+                    <!-- <div class="input-field">
+                        <input type="text" name="email" class="email" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    -->
+                    <div class="input-field">
+                        <input type="password" name="password" class="password" placeholder="Create a new password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="confirm_password" class="password" placeholder="Confirm new password" required>
+                        <i class="uil uil-lock-access icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    
+                    <!-- Display error message if it exists -->
+                    {% if error_message %}
+                    <div id="error-message" class="error-message">
+                        <p>{{ error_message }}</p>
+                    </div>
+                    {% endif %}
+                    
+                    <div class="input-field button">
+                        <input type="submit" value="Save">
+                    </div>
+                </form>
+                
+                <div class="login-signup">
+                    <a href="/login" class="text signup-text">Sign in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/js/login.js"></script>
+
+</body>
+
+</html>

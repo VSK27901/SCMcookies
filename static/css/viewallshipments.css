@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    padding: 10px;
+    background-image: url(../images/man.png);
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.logo-container {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0d77be;
+    text-align: center;
+    margin-right: 45%;
+}
+
+.table-container {
+    margin-top: 20px;
+    max-height: 70vh;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+    border-spacing: 0;
+}
+
+
+th {
+    color: white;
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 6px;
+}
+
+th:nth-child(even) {
+    background: #2980b9;
+}
+
+th:nth-child(odd) {
+    background: #df2323;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    /* Adjusted padding */
+    text-align: left;
+}
+
+/* Apply background colors to td elements */
+tr:nth-child(even) td {
+    background: #fdfeff;
+    /* Even row background color */
+}
+
+tr:nth-child(odd) td {
+    background: #e2ebe7;
+    /* Odd row background color */
+}
+
+
+/* Add a CSS class for the active sidebar */
+.l-navbar.active+.container .table-container {
+    max-width: calc(100% - 260px);
+}
+
+/* Make the table responsive */
+@media screen and (max-width: 992px) {
+    .responsive-table {
+        font-size: 12px;
+        /* Further reduced font size for smaller screens */
+    }
+
+    .l-navbar.active+.container .table-container {
+        max-width: 100%;
+        /* Make the table full width when the sidebar is open */
+    }
+}

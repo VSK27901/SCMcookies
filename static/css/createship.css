@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/cs.jpg);
+}
+
+.container {
+    margin-top: 20px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    height: auto; 
+    margin-left: 5%;
+    margin-right: 5%;
+    background: #fff;
+    border-radius: 20px;
+    width: auto;
+}
+
+.logo-container {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center; 
+    margin-right: 40%;
+    color: #9b59b6;
+}
+
+.container form .ship-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+form .ship-details .input-box {
+    margin-bottom: 0px; /* Adjust the margin as needed */
+    width: calc(50% - 30px);
+}
+
+.ship-details .input-box .details {
+    display: block;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.ship-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border-width: 2px; 
+}
+
+.ship-details .input-box input:focus,
+.ship-details .input-box input:valid {
+    border-color: #9b59b6;
+}
+
+.ship-details .input-box select {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border-width: 2px;
+}
+
+/* Style for focused and valid dropdowns */
+.ship-details .input-box select:focus,
+.ship-details .input-box select:valid {
+    border-color: #9b59b6;
+}
+
+
+.ship-details .button1,
+.ship-details .button2 {
+    width: calc(50% - 15px); /* Adjust the width as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Add margin for spacing */
+}
+
+.create-shipment-button,
+.clear-button {
+    height: 40px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    width: 50%;
+    cursor: pointer;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.clear-button {
+    margin-left: 15px;
+    background: linear-gradient(135deg, #ff5733, #ff3300);
+}
+
+@media (max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .container form .ship-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .container form .ship-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+}

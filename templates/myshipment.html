@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/css/myship.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <script src="../static/js/dashboard.js"></script>
+    <title>My Shipment</title>
+</head>
+
+<body>
+
+    <body id="body-pd">
+        <header class="header" id="header">
+            <div class="header_toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+            <div class="logo-container">
+                <span>My Shipment</span>
+            </div>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div>
+                    <div class="nav_list">
+                        <a href="/dashboard" class="nav_link">
+                            <i class='bx bx-grid-alt nav_icon'></i>
+                            <span class="nav_name">Dashboard</span>
+                        </a>
+                        <a href="/myaccount" class="nav_link">
+                            <i class='bx bx-user nav_icon'></i>
+                            <span class="nav_name">My Account</span>
+                        </a>
+                        <a href="/myshipment" class="active">
+                            <i class='bx bxs-book-content'></i>
+                            <span class="nav_name">My Shipment</span>
+                        </a>
+                        <a href="/createshipment" class="nav_link">
+                            <i class='bx bxs-truck'></i>
+                            <span class="nav_name">New Shipment</span>
+                        </a>
+                        <a href="/viewallshipments" class="nav_link">
+                            <i class='bx bx-package'></i>
+                            <span class="nav_name">View Shipments</span>
+                        </a>
+                        <a href="/devicedata" class="nav_link">
+                            <i class='bx bx-hdd'></i>
+                            <span class="nav_name">Device Data</span>
+                        </a>
+
+                    </div>
+                </div>
+                <a href="/logout" class="nav_link">
+                    <i class='bx bx-log-out nav_icon'></i>
+                    <span class="nav_name">SignOut</span>
+                </a>
+            </nav>
+        </div>
+        <div class="table-scroll">
+            <table>
+                <div class="container">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.no</th>
+                                    <th>Shipment Number</th>
+                                    <th>Container Number</th>
+                                    <th>Route Details</th>
+                                    <th>Goods Type</th>
+                                    <th>Device</th>
+                                    <th>Expected Delivery Date</th>
+                                    <th>PO Number</th>
+                                    <th>NDC Number</th>
+                                    <th>Delivery Number</th>
+                                    <th>Batch id</th>
+                                    <th>Serial Number of Goods</th>
+                                    <th>Shipment Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                {% for shipment in user_shipments %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td>{{ shipment.shipment_no }}</td>
+                                    <td>{{ shipment.container_no }}</td>
+                                    <td>{{ shipment.route_details }}</td>
+                                    <td>{{ shipment.goods_type }}</td>
+                                    <td>{{ shipment.device }}</td>
+                                    <td>{{ shipment.expected_delivery }}</td>
+                                    <td>{{ shipment.po_no }}</td>
+                                    <td>{{ shipment.delivery_no }}</td>
+                                    <td>{{ shipment.ndc_no }}</td>
+                                    <td>{{ shipment.batch_id }}</td>
+                                    <td>{{ shipment.serial_no }}</td>
+                                    <td>{{ shipment.shipment_des }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </table>
+        </div>
+        <script src="../static/js/myship.js"></script>
+    </body>
+</html>

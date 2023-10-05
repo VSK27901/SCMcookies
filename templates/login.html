@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <div class="form-login">
+                <img src="../static/images/SCMlogo.png" alt="Logo" class="logo">
+                <span class="title">Sign in now</span>
+                <form action="/login" autocomplete="off" method="post">
+
+                    <div class="error-message" id="password-error">
+                        <div class="input-field">
+                            <input type="text" name="username" class="email" placeholder="Enter your email" required>
+                            <i class="uil uil-envelope icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="error-message" id="password-error">
+                        <div class="input-field">
+                            <input type="password" name="password" class="password" placeholder="Enter your password"
+                                required>
+                            <i class="uil uil-lock icon"></i>
+                            <i class="uil uil-eye-slash showHidePw"></i>
+                        </div>
+                    </div>
+
+                    {% if error_message %}
+                    <div id="error-message" class="error-message">
+                        <p>{{ error_message }}</p>
+                    </div>
+                    {% endif %}
+
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logcheck">
+                            <label for="logcheck" class="text">Remember me</label>
+                        </div>
+                        <a href="forgotpassword" class="text">Forgot password?</a>
+                    </div>
+
+                    <div id="captcha-container" class="g-recaptcha" data-sitekey="6LemlOsnAAAAAFcvvmMmbVV9aBqk8D_vFo1WszO3"></div>
+
+                    <div class="input-field button">
+                        <input type="submit" id="submit-button" value="Sign in">
+                    </div>
+                </form>
+                <div class="login-signup">
+                    <span class="text">Don't have an account?
+                        <a href="signup" class="text login-link">Sign up now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/login.js"></script>
+</body>
+
+</html>

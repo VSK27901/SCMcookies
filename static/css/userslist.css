@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    position: fixed;
+    background-image: url(../images/iron.png);
+}
+
+.logo-container {
+    font-size: 30px; /* Reduced font size */
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-right: 45%;
+}
+
+.table-container {
+    margin-top: 30px;
+    max-height: 70vh; 
+    margin-left: 30%;
+    margin-right: 45%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 150%; 
+    font-size: 14px;  
+    border-spacing: 0;
+    border-left: 10%; 
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px; 
+    text-align: left;
+}
+
+th {
+    background: #3498db;
+    color: white;
+}
+
+td {
+    background: #ecf0f1;
+}
+
+th:nth-child(even) {
+    background: #2980b9;
+}
+
+th:nth-child(odd) {
+    background: #df2323;
+}
+
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 12px; /* Further reduced font size for smaller screens */
+    }
+}
+
+/* Make the table cells responsive when the sidebar is expanded */
+@media (min-width: 992px) {
+    .l-navbar.active + .container .table-container {
+        max-width: calc(100% - 260px);
+    }
+}

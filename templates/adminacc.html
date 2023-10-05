@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>My Account admin</title>
+    <link rel="stylesheet" href="../static/css/dashboard.css" />
+    <link rel="stylesheet" href="../static/css/adminacc.css" />
+    <script src="../static/js/dashboard.js"></script>
+</head>
+
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+        <div class="logo-container">
+            <span>My Account</span>
+        </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <div class="nav_list">
+                    <a href="/dashboard" class="nav_link">
+                        <i class='bx bx-grid-alt nav_icon'></i>
+                        <span class="nav_name">Dashboard</span>
+                    </a>
+                    <a href="/myaccount" class="active">
+                        <i class='bx bx-user nav_icon'></i>
+                        <span class="nav_name">My Account</span>
+                    </a>
+                    <a href="/myshipment" class="nav_link">
+                        <i class='bx bxs-book-content'></i>
+                        <span class="nav_name">My Shipment</span>
+                    </a>
+                    <a href="/createshipment" class="nav_link">
+                        <i class='bx bx-notepad'></i>
+                        <span class="nav_name">New Shipment</span>
+                    </a>
+                    <a href="/viewallshipments" class="nav_link">
+                        <i class='bx bx-package'></i>
+                        <span class="nav_name">View Shipments</span>
+                    </a>
+                    <a href="/devicedata" class="nav_link">
+                        <i class='bx bx-hdd'></i>
+                        <span class="nav_name">Device Data</span>
+                    </a>
+
+                </div>
+            </div>
+            <a href="/logout" class="nav_link">
+                <i class='bx bx-log-out nav_icon'></i>
+                <span class="nav_name">SignOut</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Display error message if it exists -->
+    {% if error_message %}
+    <div id="error-message" class="error-message">
+        <p>{{ error_message }}</p>
+    </div>
+    {% endif %}
+
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">My Account</h2>
+            <br>
+
+            <h4 class="email"> Email: {{ email }}</h4>
+            <h4 class="username"> Username: {{ username }}</h4>
+            <h4 class="role">Role: {{ role }}</h4>
+            <h4 class="creation_date">Created Date: {{ creation_date }}</h4>
+            <h4 class="creation_time">Created Time: {{ creation_time }}</h4>
+            
+            <div class="button-container">
+                <button class="btn btn-primary update-button1" onclick="location.href='/updaterole'">Update Users
+                    Role</button>
+                <button class="btn btn-primary update-button2" onclick="location.href='/updatepassword'">Update
+                    Password</button>
+                    <button class="btn btn-primary update-button3" onclick="location.href='/userslist'"> 
+                        Users List</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

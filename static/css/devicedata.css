@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: grey;
+    position: fixed;
+    box-sizing: border-box;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.logo-container {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 40%;
+    color: #0d9139;
+}
+
+/* Increase the size of the table container */
+.table-container {
+    width: 100%;
+    overflow: hidden;
+    margin: 30px; 
+    max-height: 300px; 
+    margin-left: 20%;
+    background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+#data-table thead {
+    top: 0;
+    background: linear-gradient(to bottom, #3a92bb, #41969c);
+    color: white;
+    font-weight: bold;
+    z-index: 1;
+} 
+
+#data-table thead th {
+    background: linear-gradient(to bottom, #447bbb, #457ba0);
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+} */
+
+#data-table tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+    font-size: 14px;
+}
+
+#data-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#data-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Add styles for the select container */
+.select-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+.deviceid {
+    flex: 1;
+    margin-right: 10px;
+    padding: 5px;
+    color: #333;
+    width: 30%;
+}
+
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    box-sizing: border-box; 
+}
+
+
+.get-data-button,
+.clear-button {
+    padding: 10px 20px;
+    background-color: #9b12b696;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+.get-data-button:hover,
+.clear-button:hover {
+    background-color: #008fb3;
+}
+
+
+.input-box {
+    width: 120%;
+    margin: 15px;
+    padding: 20px;
+    border: 2px solid #d8b569;
+    border-radius: 15px;
+    background-color: #d3dbc5;
+    text-align: center;
+    margin-left: 10%;
+    box-sizing: border-box; 
+}
+
+
+.input-box h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #c9271b;
+    text-align: center;
+}
+
+.details {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+    box-sizing: border-box; 
+}
+
+
+/* Pagination styles */
+.pagination {
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 20%;
+}
+
+.pagination button {
+    background-color: #008fb3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    margin-left: 20%;
+}
+
+/* Add custom styles for the pagination buttons */
+.pagination button {
+    background-color: #000000; /* Background color for the buttons */
+    color: #fff; /* Text color for the buttons */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    margin-left: 20%;
+    font-size: 16px; /* Font size for the button text */
+}
+
+/* Style for the "Previous" button */
+.pagination #prevPage {
+    background-color: #dfa16e; /* Background color for the "Previous" button */
+}
+
+/* Style for the "Next" button */
+.pagination #nextPage {
+    background-color: #dfa16e; /* Background color for the "Next" button */
+}
+

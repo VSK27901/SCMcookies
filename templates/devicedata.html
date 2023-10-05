@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/devicedata.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <script src="../static/js/dashboard.js"></script>
+    <title>Device Data</title>
+</head>
+
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+        <div class="logo-container">
+            <span>Device Data Stream</span>
+        </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <div class="nav_list">
+                    <a href="/dashboard" class="nav_link">
+                        <i class='bx bx-grid-alt nav_icon'></i>
+                        <span class="nav_name">Dashboard</span>
+                    </a>
+                    <a href="/myaccount" class="nav_link">
+                        <i class='bx bx-user nav_icon'></i>
+                        <span class="nav_name">My Account</span>
+                    </a>
+                    <a href="/myshipment" class="nav_link">
+                        <i class='bx bxs-book-content'></i>
+                        <span class="nav_name">My Shipment</span>
+                    </a>
+                    <a href="/createshipment" class="nav_link">
+                        <i class='bx bxs-truck'></i>
+                        <span class="nav_name">New Shipment</span>
+                    </a>
+                    <a href="/viewallshipments" class="nav_link">
+                        <i class='bx bx-package'></i>
+                        <span class="nav_name">View Shipments</span>
+                    </a>
+                    <a href="/devicedata" class="active">
+                        <i class='bx bx-hdd'></i>
+                        <span class="nav_name">Device Data</span>
+                    </a>
+
+                </div>
+            </div>
+            <a href="/logout" class="nav_link">
+                <i class='bx bx-log-out nav_icon'></i>
+                <span class="nav_name">SignOut</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Display error message if it exists -->
+    {% if error_message %}
+    <div id="error-message" class="error-message">
+        <p>{{ error_message }}</p>
+    </div>
+    {% endif %}
+
+    <div class="input-box">
+        <form action="/devicedata" autocomplete="off" method="post">
+            <h1>Please Select a Device Id to See the Data Stream</h1>
+            <label id="selected-device" class="details">Device id*</label>
+            <select name="deviceid" id="deviceid" class="deviceid" required>
+                <option value="" disabled selected>Select Device id</option>
+                <option value="11560533076">11560533076</option>
+                <option value="11560533077">11560533077</option>
+                <div class="button-container">
+                    <input type="submit" value="Get Device Data" class="get-data-button" method="post">
+                </div>
+            </select>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <table class="table" id="data-table">
+            <thead>
+                <tr>
+                    <th>Device id</th>
+                    <th>Battery Level</th>
+                    <th>First Sensor Temperature</th>
+                    <th>Route from</th>
+                    <th>Route To</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                {% for devicedata in device_data %}
+                <tr>
+                    <td>{{ devicedata.Device_Id }}</td>
+                    <td>{{ devicedata.Battery_Level }}</td>
+                    <td>{{ devicedata.First_Sensor_temperature }}</td>
+                    <td>{{ devicedata.Route_From }}</td>
+                    <td>{{ devicedata.Route_To }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <button id="prevPage" class="page-link" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </button>
+            </li>
+            <li class="page-item">
+                <span id="currentPage" class="page-link">Page 1</span>
+            </li>
+            <li class="page-item">
+                <button id="nextPage" class="page-link" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="../static/js/devicedata.js"></script>
+</body>
+
+</html>
