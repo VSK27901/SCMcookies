@@ -8,28 +8,27 @@ from dotenv import load_dotenv
 from app.config.db import users_collection
 import secrets
 
-
+# Load environment variables from a .env file
 load_dotenv()
 
 # Create an instance of CryptContext for password hashing and verification
 pwd_cxt = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 class Hash:
-    @staticmethod
     def hash_password(pwd: str):   #hashing the password
         return pwd_cxt.hash(pwd)
 
-    @staticmethod
     def verify_password(pwd: str, hashed_password: str):  #verify the hashed password
         return pwd_cxt.verify(pwd, hashed_password)
 
+# Load environment variables for JWT configuration
 SECRET_KEY=os.getenv("SECRET_KEY")
 ALGORITHM=os.getenv("ALGORITHM")
 ACCESS_TOKEN_EXPIRE_SECONDS = os.getenv("ACCESS_TOKEN_EXPIRE_SECONDS")
 
 
 
-
+# OAuth2PasswordBearer for token authentication
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 
