@@ -35,8 +35,9 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 ###### ----------function to create access token(JWT) for user authenication----------######
 
 def create_access_token(data: dict, expires_delta: timedelta | None = None):
-    to_encode = data.copy()
-    if expires_delta:
+    to_encode = data.copy()     # Make a copy of the input data dictionary
+    # Calculate the token expiration time
+    if expires_delta: 
         expire = datetime.utcnow() + expires_delta
     else:
         expire = datetime.utcnow() + timedelta(minutes=int(ACCESS_TOKEN_EXPIRE_SECONDS))
@@ -50,6 +51,7 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None):
 
 def decode_token(token: str):
     try:
+        # Attempt to decode the provided token
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         return payload
     except ExpiredSignatureError:
