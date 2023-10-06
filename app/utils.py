@@ -95,6 +95,3 @@ def get_current_user_from_cookie(request: Request):
 
 def clear_access_token_cookie(response):
     response.delete_cookie("access_token")
-
-
-
