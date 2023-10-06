@@ -77,7 +77,7 @@ nav .logo{
     text-decoration: none;
     display: inline-block;
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     border: 2px solid #fff;
     padding: 14px 70px;
     border-radius: 50px;
@@ -87,6 +87,11 @@ nav .logo{
 .content a:hover{
     color: #fff;
     background: rgb(10, 141, 50);
+}
+
+.content .cnt a:hover{
+    color: #fff;
+    background: rgb(9, 112, 138);
 }
 
 .bgv{

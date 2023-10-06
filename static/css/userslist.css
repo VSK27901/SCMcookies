@@ -9,13 +9,13 @@
 
 body {
     position: fixed;
-    background-image: url(../images/iron.png);
+    background-image: url(../images/man.png);
 }
 
 .logo-container {
     font-size: 30px; /* Reduced font size */
     font-weight: bold;
-    color: #333;
+    color: #9c3838;
     text-align: center;
     margin-right: 45%;
 }
