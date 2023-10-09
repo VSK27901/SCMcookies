@@ -132,3 +132,32 @@ async def updaterolerole(request: Request, current_user: dict = Depends(get_curr
     except Exception as e:
         raise HTTPException(
             status_code=500, detail=f"Internal Server Error: {str(e)}")
+
+
+
+###### ----------To display all user(only admins can see)----------######
+
+@user.get("/userslist", response_class=HTMLResponse)
+async def userslist(request: Request, current_user: dict = Depends(get_current_user_from_local_storage)):
+    try:
+        if current_user is None:
+            return templates.TemplateResponse("login.html", {"request": request})
+
+        user_db = users_collection.find({})
+
+        role = current_user.get('role')
+
+        if role != "admin":  # Check the role here
+            # raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Access denied. Only admins are allowed.")
+            error_message = f"Sorry {current_user.get('username')}, you are allowed to access this page"
+            return templates.TemplateResponse("dashboard.html", {"request": request, "error_message": error_message})
+
+        # Fetch user account data from the database
+        user_data = {
+            "username": current_user["username"], "email": current_user["email"]}
+
+        return templates.TemplateResponse("userslist.html", {"request": request, "user_data": user_data, "user_db": user_db})
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500, detail=f"Internal Server Error: {str(e)}")
