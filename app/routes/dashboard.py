@@ -138,7 +138,7 @@ async def updaterolerole(request: Request, current_user: dict = Depends(get_curr
 ###### ----------To display all user(only admins can see)----------######
 
 @user.get("/userslist", response_class=HTMLResponse)
-async def userslist(request: Request, current_user: dict = Depends(get_current_user_from_local_storage)):
+async def userslist(request: Request, current_user: dict = Depends(get_current_user_from_cookie)):
     try:
         if current_user is None:
             return templates.TemplateResponse("login.html", {"request": request})
