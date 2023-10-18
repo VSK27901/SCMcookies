@@ -1,0 +1,26 @@
+git commands:
+
+#intialize repository
+
+git init
+
+
+#signin in github, vscode
+
+#Move all to staging 
+
+git add .
+
+#commit
+
+git commit -a -m "intial commit"
+
+
+
+#git configuration
+
+git config --global user.name "Your Name"  repo_REPONAME
+
+
+
+git push -f -u vsk main or master

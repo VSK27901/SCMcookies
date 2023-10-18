@@ -1,0 +1,60 @@
+env\Scripts\activate
+
+cd app
+
+docker build -t app:v2 .
+
+docker tag app:v2 riyazdocker11/scm:appv2 
+
+docker push riyazdocker11/scm:appv2 
+
+cd ..
+
+
+
+env\Scripts\activate
+
+cd Producer
+
+docker build -t producer:v2 .
+
+docker tag producer:v2 riyazdocker11/scm:producerv2 
+
+docker push riyazdocker11/scm:producerv2 
+
+cd ..
+
+
+
+
+env\Scripts\activate
+
+cd Consumer
+
+docker build -t consumer:v2 .
+
+docker tag consumer:v2 riyazdocker11/scm:consumerv2 
+
+docker push riyazdocker11/scm:consumerv2 
+
+cd ..
+
+
+
+
+
+env\Scripts\activate
+
+cd Socket_connection
+
+docker build -t server:v2 .
+
+docker tag server:v2 riyazdocker11/scm:serverv2 
+
+docker push riyazdocker11/scm:serverv2
+
+
+
+
+docker-compose up
+

@@ -1,0 +1,26 @@
+Run zookeeper:
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+Run Kafka server
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+Create a topic:
+.\bin\windows\kafka-topics.bat --create --topic quickstart-events --bootstrap-server localhost:9092
+
+Run Producer:
+.\bin\windows\kafka-console-producer.bat --topic quickstart-events --bootstrap-server localhost:9092
+
+Run Consumer:
+.\bin\windows\kafka-console-consumer.bat --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+
+Check all topis:
+.\bin\windows\kafka-topics.bat --zookeeper localhost:2181 --list
+
+
+
+
+
+
+mongouri = mongodb+srv://mongodb123exafluence:mongodb@mongo.kzfgxfw.mongodb.net/?retryWrites=true&w=majority
+
+
